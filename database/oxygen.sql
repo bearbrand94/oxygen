@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `transactions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table oksigen.transactions: ~9 rows (approximately)
+-- Dumping data for table oksigen.transactions: ~10 rows (approximately)
 DELETE FROM `transactions`;
 /*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
 INSERT INTO `transactions` (`id`, `order_id`, `order_date`, `client_name`, `truck_id`, `truck_name`, `created_at`, `updated_at`, `paid_status`, `payment_time`, `payment_ref`) VALUES
@@ -75,7 +75,8 @@ INSERT INTO `transactions` (`id`, `order_id`, `order_date`, `client_name`, `truc
 	(6, 'OD060001', '2019-06-15 14:31:35', 'Sumber Baru', 'N 9605 UF', 'Heri Kirun', '2019-06-18 14:32:14', '2019-06-18 14:32:14', 0, NULL, NULL),
 	(7, 'OD060002', '2019-06-21 14:31:35', 'Sumber Baru', 'L 8049 RT', 'Agus', '2019-06-18 14:32:14', '2019-06-18 14:32:14', 0, NULL, NULL),
 	(8, 'OD060003', '2019-06-29 15:02:34', 'Sumber Baru', 'L 8847 LV', 'Sadi', '2019-06-28 15:02:40', '2019-06-28 15:02:41', 0, NULL, NULL),
-	(9, 'OD060004', '2019-06-29 15:03:36', 'Sumber Baru', 'S 9544 UQ', 'Jais', '2019-06-28 15:04:07', '2019-06-28 15:04:07', 0, NULL, NULL);
+	(9, 'OD060004', '2019-06-29 15:03:36', 'Sumber Baru', 'S 9544 UQ', 'Jais', '2019-06-28 15:04:07', '2019-06-28 15:04:07', 0, NULL, NULL),
+	(10, 'OD070001', '2019-07-02 16:14:27', 'Sumber Baru', 'W 8134 YB', 'Junet', '2019-07-10 16:14:49', '2019-07-10 16:14:50', 0, NULL, NULL);
 /*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 
 -- Dumping structure for table oksigen.transaction_detail
@@ -95,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `transaction_detail` (
   CONSTRAINT `FK_transaction_detail_transactions` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table oksigen.transaction_detail: ~13 rows (approximately)
+-- Dumping data for table oksigen.transaction_detail: ~15 rows (approximately)
 DELETE FROM `transaction_detail`;
 /*!40000 ALTER TABLE `transaction_detail` DISABLE KEYS */;
 INSERT INTO `transaction_detail` (`id`, `transaction_id`, `product_name`, `ref_table`, `ref_id`, `description`, `qty`, `price_each`, `created_at`, `updated_at`) VALUES
@@ -112,7 +113,8 @@ INSERT INTO `transaction_detail` (`id`, `transaction_id`, `product_name`, `ref_t
 	(11, 7, 'Isi Oksigen (Tabung Lama)', '', 0, '', 23, 100000, '2019-06-18 14:39:20', '2019-06-18 14:39:21'),
 	(12, 7, 'Perbaikan Tabung Oksigen', '', 0, 'Perbaikan 1 Aspen + 1 Bunit', 2, 20000, '2019-06-18 14:39:51', '2019-06-18 14:40:21'),
 	(13, 8, 'Isi Oksigen (Tabung Lama)', '', 0, '', 35, 100000, '2019-06-28 15:04:41', '2019-06-28 15:09:22'),
-	(14, 9, 'Isi Oksigen (Tabung Lama)', '', 0, '', 22, 100000, '2019-06-28 15:04:55', '2019-06-28 15:09:19');
+	(14, 9, 'Isi Oksigen (Tabung Lama)', '', 0, '', 22, 100000, '2019-06-28 15:04:55', '2019-06-28 15:09:19'),
+	(15, 10, 'Isi Oksigen (Tabung Lama)', '', 0, '', 22, 100000, '2019-07-10 16:15:02', '2019-07-10 16:29:16');
 /*!40000 ALTER TABLE `transaction_detail` ENABLE KEYS */;
 
 -- Dumping structure for table oksigen.users
